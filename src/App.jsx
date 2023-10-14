@@ -4,12 +4,21 @@ import Boton from "./Components/Boton.jsx";
 import Pantalla from "./Components/Pantalla.jsx";
 import BotonClear from "./Components/BotonClear.jsx";
 import { useState } from "react";
+import { evaluate } from "mathjs"; /* hay otros metodos para realizar los calculos. */
 
 function App() {
   const [input, setInput] = useState("");
 
   const agregarInput = (val) => {
     setInput(input + val);
+  };
+
+  const calcularResultado = () => {
+    if(input){
+      setInput(evaluate(input));
+    }else{
+      alert("Ingresa los valores para realizar los calculos")
+    }
   };
 
   return (
@@ -42,7 +51,7 @@ function App() {
           <Boton manejarClic={agregarInput}>*</Boton>
         </div>
         <div className="fila">
-          <Boton manejarClic={agregarInput}>=</Boton>
+          <Boton manejarClic={calcularResultado}>=</Boton>
           <Boton manejarClic={agregarInput}>0</Boton>
           <Boton manejarClic={agregarInput}>.</Boton>
           <Boton manejarClic={agregarInput}>/</Boton>
