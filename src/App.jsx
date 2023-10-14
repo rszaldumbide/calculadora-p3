@@ -3,6 +3,7 @@ import LogoFreecodecamp from "./assets/imgs/freecodecamp-Logo.png";
 import Boton from "./Components/Boton.jsx";
 import Pantalla from "./Components/Pantalla.jsx";
 import BotonClear from "./Components/BotonClear.jsx";
+import Logo from "./Components/Logo.jsx";
 import { useState } from "react";
 import { evaluate } from "mathjs"; /* hay otros metodos para realizar los calculos. */
 
@@ -14,20 +15,20 @@ function App() {
   };
 
   const calcularResultado = () => {
-    if(input){
+    if (input) {
       setInput(evaluate(input));
-    }else{
-      alert("Ingresa los valores para realizar los calculos")
+    } else {
+      alert("Ingresa los valores para realizar los calculos");
     }
   };
 
   return (
     <div className="App">
       <div className="freecodecamp-logo-contenedor">
-        <img
-          className="freecodecamp-logo"
-          src={LogoFreecodecamp}
-          alt="Logo de Freecodecamp"
+        <Logo
+          css="freecodecamp-logo"
+          rutaLogo={LogoFreecodecamp}
+          nombreAlt="Logo de FreecodeCamp"
         />
       </div>
       <div className="contenedor-calculadora">
