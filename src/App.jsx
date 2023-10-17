@@ -6,6 +6,7 @@ import BotonClear from "./Components/BotonClear.jsx";
 import Logo from "./Components/Logo.jsx";
 import { useState } from "react";
 import { evaluate } from "mathjs"; /* hay otros metodos para realizar los calculos. */
+import swal from 'sweetalert';
 
 function App() {
   const [input, setInput] = useState("");
@@ -18,7 +19,7 @@ function App() {
     if (input) {
       setInput(evaluate(input));
     } else {
-      setInput(evaluate("Ingresa los valores para realizar los calculos"));
+      swal("Opss!", "Ingresa los valores para realizar los calculos!", "error");
       /* alert("Ingresa los valores para realizar los calculos");
      */}
   };
