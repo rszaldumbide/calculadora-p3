@@ -18,8 +18,9 @@ function App() {
     if (input) {
       setInput(evaluate(input));
     } else {
-      alert("Ingresa los valores para realizar los calculos");
-    }
+      setInput(evaluate("Ingresa los valores para realizar los calculos"));
+      /* alert("Ingresa los valores para realizar los calculos");
+     */}
   };
 
   return (
